@@ -29,7 +29,8 @@ class Square extends Polygon {
     }
     get isValid(){
         const hasFourSides = Object.values(this).length === 4;
-        const allSidesEqual = Object.values(this).every(val => val === this.side1);
+        // const allSidesEqual = Object.values(this).every(val => val === this.side1);
+        const allSidesEqual = new Set(Object.values(this)).size === 1;
         return hasFourSides && allSidesEqual;
     }
 }
